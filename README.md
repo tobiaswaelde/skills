@@ -46,7 +46,7 @@ Start a new Codex chat after installation or updates; restart the app if changes
 
 ## Imported skill collections
 
-All collections are included in `personal-skills@tobiaswaelde`; no additional marketplace or plugin installation is required.
+The Caveman collection is included in `personal-skills@tobiaswaelde`. Matt Pocock skills are installed separately from their upstream marketplace.
 
 ### Caveman family (22 skills)
 
@@ -54,13 +54,23 @@ Imported from the existing local installations of [Julius Brussee's Caveman](htt
 
 `cavecrew`, `caveman`, `caveman-commit`, `caveman-compress`, `caveman-discover`, `caveman-evidence-review`, `caveman-explore`, `caveman-help`, `caveman-learn`, `caveman-manage`, `caveman-optimize`, `caveman-review`, `caveman-setup`, `caveman-stats`, `investigate-first`, `lean-build`, `megacave`, `migration`, `safe-refactor`, `surgical-patch`, `ultracave`, `verify-and-stop`.
 
-### Matt Pocock (36 skills)
+### Matt Pocock: separate upstream marketplace
 
-Imported from the existing local installations of [Matt Pocock's skills](https://github.com/mattpocock/skills), including reference documents, templates, and helper scripts.
+Install Matt Pocock's plugin directly from its own marketplace:
 
-`ask-matt`, `chief-of-staff`, `code-review`, `codebase-design`, `diagnosing-bugs`, `domain-modeling`, `grill-me`, `grill-with-docs`, `grilling`, `handoff`, `implement`, `implement-spec`, `improve-codebase-architecture`, `loop-me`, `migrate-to-shoehorn`, `pr`, `prototype`, `research`, `retro`, `scaffold-exercises`, `setup-matt-pocock-skills`, `setup-pre-commit`, `setup-ts-deep-modules`, `tdd`, `teach`, `to-questionnaire`, `to-spec`, `to-tickets`, `triage`, `wait-what`, `wayfinder`, `wizard`, `writing-beats`, `writing-for-agents`, `writing-fragments`, `writing-shape`.
+```sh
+codex plugin marketplace add mattpocock/skills
+codex plugin add mattpocock-skills@mattpocock
+```
 
-This preserves the installed collection, including the upstream `in-progress` and `misc` skills that were installed separately. Their inclusion does not promote them to stable upstream plugin features.
+These skills are not bundled in `personal-skills`. The upstream plugin currently declares 27 engineering and productivity skills. The nine additional `in-progress` and `misc` skills from the earlier local installation are not part of that declared upstream plugin; existing local copies remain available.
+
+Refresh upstream independently:
+
+```sh
+codex plugin marketplace upgrade mattpocock
+codex plugin add mattpocock-skills@mattpocock
+```
 
 ### Codex compatibility and external dependencies
 
@@ -72,7 +82,7 @@ This preserves the installed collection, including the upstream `in-progress` an
 
 ### Attribution
 
-Caveman notices and license texts are preserved under [third-party/caveman](third-party/caveman/). Matt Pocock's MIT notice is preserved under [third-party/mattpocock/LICENSE](third-party/mattpocock/LICENSE). Original per-skill credit metadata is retained.
+Caveman notices and license texts are preserved under [third-party/caveman](third-party/caveman/). Original per-skill credit metadata is retained.
 
 ## Coding guideline template
 
