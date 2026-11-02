@@ -1,0 +1,18 @@
+{
+  "marketplaces": [
+    {
+      "name": "mattpocock",
+      "url": "https://github.com/mattpocock/skills.git",
+      "plugins": [
+        "mattpocock-skills"
+      ]
+    },
+    {
+      "name": "caveman",
+      "url": "https://github.com/JuliusBrussee/caveman.git",
+      "plugins": [
+        "caveman"
+      ]
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "personal-skills",
-  "version": "1.1.3",
-  "description": "Personal Codex skills, the Caveman skill family, coding standards, and project delivery.",
+  "version": "1.1.4",
+  "description": "Personal Codex skills for coding standards and project delivery.",
   "extensions": {
     "com.openai": {
       "interface": {
