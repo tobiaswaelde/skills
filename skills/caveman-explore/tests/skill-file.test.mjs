@@ -1,0 +1,46 @@
+// Codex packaging: validate host-neutral metadata and inherited-model behavior.
+import { test } from "node:test";
+import assert from "node:assert";
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const skillFile = join(dirname(fileURLToPath(import.meta.url)), "..", "SKILL.md");
+const md = readFileSync(skillFile, "utf8");
+
+function frontmatter(text) {
+  const match = text.match(/^---\n([\s\S]*?)\n---\n/);
+  assert.ok(match, "skill file must open with a --- frontmatter block ---");
+  return match[1];
+}
+
+test("frontmatter names the explorer without unsupported Claude model or tool fields", () => {
+  const fm = frontmatter(md);
+  assert.match(fm, /^name:\s*caveman-explore\s*$/m, "name must be caveman-explore");
+  assert.doesNotMatch(fm, /^model:/m, "Codex must inherit the current model");
+  assert.match(md, /inherit the current model/i, "delegated explorer must preserve model inheritance");
+  assert.doesNotMatch(fm, /^tools:/m, "Claude tool declarations must not be shipped as Codex metadata");
+  assert.doesNotMatch(fm, /\b(Edit|Write|Bash|NotebookEdit)\b/, "explorer must not have write or execution tools");
+  assert.match(fm, /^description:\s*.+/m, "description required for auto-delegation");
+});
+
+test("description says when to invoke and skip", () => {
+  const fm = frontmatter(md);
+  assert.match(fm, /cold-start|cross-file|localization|search has failed/i, "must say when to invoke");
+  assert.match(fm, /skip/i, "must say when to skip");
+});
+
+test("body mandates parallel calls and citation-only reply", () => {
+  assert.match(md, /IN PARALLEL/i, "must mandate parallel tool calls");
+  assert.match(md, /ONLY an evidence block|only.*citation/i, "must mandate citation-only reply");
+  assert.match(md, /path\/to\/file\.ext:START-END/i, "must show compact path:line shape");
+  assert.match(md, /no relevant locations found/i, "must give honest empty fallback");
+  assert.match(md, /never edit|never.*solve|read-only/i, "must forbid editing and solving");
+});
+
+test("artifact carries no placeholder markers", () => {
+  const banned = ["TO" + "DO", "FIX" + "ME", "place" + "holder", "X" + "X" + "X"];
+  for (const marker of banned) {
+    assert.doesNotMatch(md, new RegExp("\\b" + marker + "\\b", "i"), `artifact must not contain ${marker}`);
+  }
+});

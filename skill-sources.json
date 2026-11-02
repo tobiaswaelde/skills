@@ -1,0 +1,475 @@
+{
+  "snapshotDate": "2026-11-02",
+  "snapshotSource": "Existing local installations; original folder hashes from the skills installer lockfile. No implicit upstream upgrade.",
+  "skills": {
+    "ask-matt": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/ask-matt/SKILL.md",
+      "sourceFolderHash": "d6a0d9bf3cdc78cbfcbd6466ac5fd3deffb52877",
+      "sourceSkillSha256": "1371f5ce005de0992a44b137748bfb960a56948aa9871b405fe9d90b24332e3c",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "cavecrew": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/cavecrew/SKILL.md",
+      "sourceFolderHash": "94c53a8c99ee75ca94245b60c6a4e97f79c02987",
+      "sourceSkillSha256": "534c0a70d4c7728815214a11e80e66cecbd2104f905f96414e6e32504381c002",
+      "codexFrontmatterAdaptations": [],
+      "codexBodyAdaptations": [
+        "Added Codex delegation instructions and bundled task profile links."
+      ]
+    },
+    "caveman": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/caveman/SKILL.md",
+      "sourceFolderHash": "b314dd99b2b8723aae2de5a22079914567f2e58f",
+      "sourceSkillSha256": "415d43518f2b1a9498c15a445d4657117b129ee5e81b19454ce348439cc6672b",
+      "codexFrontmatterAdaptations": []
+    },
+    "caveman-commit": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/caveman-commit/SKILL.md",
+      "sourceFolderHash": "7b600195c1d3cdd277dc608c56384c86afb7ec11",
+      "sourceSkillSha256": "c788a282fc75b981b421dfdad5d84ea7f83f946c126daa39cfc7d3f97845e193",
+      "codexFrontmatterAdaptations": []
+    },
+    "caveman-compress": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/caveman-compress/SKILL.md",
+      "sourceFolderHash": "8bfde0c338b80b7a30c6b267ccdeb6fe9dc96a35",
+      "sourceSkillSha256": "377b0b8682d9db1a832c20ee6732ed0f19f55e4f7048955296128244c869c916",
+      "codexFrontmatterAdaptations": []
+    },
+    "caveman-discover": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/caveman-discover/SKILL.md",
+      "sourceFolderHash": "d43d2ff7268e8df5db2198977b79b765b723b9d9",
+      "sourceSkillSha256": "0483d17fce14ca5bbfcf1e085c180412dc20a672f5e8e4171fd0bbbb6f42b81a",
+      "codexFrontmatterAdaptations": []
+    },
+    "caveman-evidence-review": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/caveman-evidence-review/SKILL.md",
+      "sourceFolderHash": "50875bf7d4a1ce7a64d92cc4127b3c63c2e0701a",
+      "sourceSkillSha256": "05bd896c76a41918fe7b87113dabe852117727a579a7e445891aa41391ed57c2",
+      "codexFrontmatterAdaptations": []
+    },
+    "caveman-explore": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/caveman-explore/SKILL.md",
+      "sourceFolderHash": "21ae2775d5f2a0a2d6cc89797d75b94c350b8353",
+      "sourceSkillSha256": "908f504ce45f5f8517ac7b64dc89fef57c4519d26f92b0b1843febf4b6fe2ac8",
+      "codexFrontmatterAdaptations": [
+        "tools",
+        "model"
+      ],
+      "codexResourceAdaptations": [
+        "tests/skill-file.test.mjs checks inherited Codex models and rejects unsupported Claude metadata."
+      ],
+      "codexBodyAdaptations": [
+        "Added host tool translation and model inheritance instructions."
+      ]
+    },
+    "caveman-help": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/caveman-help/SKILL.md",
+      "sourceFolderHash": "f017cd6f707954e2a351d78389432a8322281224",
+      "sourceSkillSha256": "0bf9ee3fc8a9258b2d5f6b8bf24ac21f0bf2e4b9b4641dbc426b74f18186f81d",
+      "codexFrontmatterAdaptations": []
+    },
+    "caveman-learn": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/caveman-learn/SKILL.md",
+      "sourceFolderHash": "60584e4ff4e7602b76140eb650b2073efc748954",
+      "sourceSkillSha256": "466ce607aebff17df2fb0d4ec5fba9b0ab61b1f6a0fd7ae03f4f5ea4aa5627b9",
+      "codexFrontmatterAdaptations": []
+    },
+    "caveman-manage": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/caveman-manage/SKILL.md",
+      "sourceFolderHash": "0a94a5cc3a4fd218b07d8853e4065e9a513fe51f",
+      "sourceSkillSha256": "3404a3c8651d63b6a7c02ccda17fcb4fca2489e931bb814580979a9ff548a48e",
+      "codexFrontmatterAdaptations": []
+    },
+    "caveman-optimize": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/caveman-optimize/SKILL.md",
+      "sourceFolderHash": "3311c453a59a8a27ad0555949e24fea81daf77fa",
+      "sourceSkillSha256": "93f391beb93198b5bf9c0c21bc8b7b194e57cb7855fbf05384a4a5d6dd8c06cb",
+      "codexFrontmatterAdaptations": []
+    },
+    "caveman-review": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/caveman-review/SKILL.md",
+      "sourceFolderHash": "515d07fbd383fb9a15ad94647d133f681dc56197",
+      "sourceSkillSha256": "599330563f19b5c59c3efddffcd7e8d9098b74c29817ab422ccd3253b103fcb8",
+      "codexFrontmatterAdaptations": []
+    },
+    "caveman-setup": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/caveman-setup/SKILL.md",
+      "sourceFolderHash": "be2dfccebf403aa38e16bb39e367a3f045e24b07",
+      "sourceSkillSha256": "42c8b8eeba19c6d4ffd3c421be60a7e8b5c0e5108fd4496f0be3c7ced90bfd5f",
+      "codexFrontmatterAdaptations": []
+    },
+    "caveman-stats": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/caveman-stats/SKILL.md",
+      "sourceFolderHash": "c7b80bfb2ad324f99f87e0f16a81aca38c5d7257",
+      "sourceSkillSha256": "4632f1611a56483df7851a0dabcc1e0c1952393cd8f5d08ddeda17f81a4e1e50",
+      "codexFrontmatterAdaptations": []
+    },
+    "chief-of-staff": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/in-progress/chief-of-staff/SKILL.md",
+      "sourceFolderHash": "22d9deee06f8fe60b752ea386c5fa50312aa15c3",
+      "sourceSkillSha256": "6cc6e47ab5022f3e45e5be0fedbb0f6e645f4f0190d6b0c51c7cd60c2d7c1d98",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "code-review": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/code-review/SKILL.md",
+      "sourceFolderHash": "fee7bb5fdddc069d58cbea09b2c36b5a859eac05",
+      "sourceSkillSha256": "09eb147f793e4647949edd32dbad278f0554dfb56e0d46b699cd4c2c55bf0357",
+      "codexFrontmatterAdaptations": []
+    },
+    "codebase-design": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/codebase-design/SKILL.md",
+      "sourceFolderHash": "07ba1cd60efc12d0d3a083005c1d9651cf15e39a",
+      "sourceSkillSha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "codexFrontmatterAdaptations": []
+    },
+    "diagnosing-bugs": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/diagnosing-bugs/SKILL.md",
+      "sourceFolderHash": "5fdd6cc53385395441910b026c72d71768e993d4",
+      "sourceSkillSha256": "849198df88cdb65fd0d97236604c1fca7ff2f22d2f705f9724a800d0266b118d",
+      "codexFrontmatterAdaptations": []
+    },
+    "domain-modeling": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/domain-modeling/SKILL.md",
+      "sourceFolderHash": "ea30ee454ba264543dbe40737973b1a5afb9f0e6",
+      "sourceSkillSha256": "7b925d7b1e341a2eeae33ad68a8a8c0ab889a38ddd22a7598e4c240e5a7556a3",
+      "codexFrontmatterAdaptations": []
+    },
+    "grill-me": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/productivity/grill-me/SKILL.md",
+      "sourceFolderHash": "3df14e2d3a89459bf300614be9247e3ce74798f8",
+      "sourceSkillSha256": "caaf8b8de1684f96e26b28f3c29189db5c89cce4b73e1c93d86164f66ef88637",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "grill-with-docs": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/grill-with-docs/SKILL.md",
+      "sourceFolderHash": "eedaf2562c83155115e9c649fa3ecaac2e10e81d",
+      "sourceSkillSha256": "7de372c13488f1ee96cc11cd8907b56b6809cc93eef776eeddd37de6b6cbe3fe",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "grilling": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/productivity/grilling/SKILL.md",
+      "sourceFolderHash": "28aceb4c9567b985cb47f7db88cf23c9f33af8b8",
+      "sourceSkillSha256": "befdff1e27a1dfe2a294d5871169ac1afe16d983911daa4f32627514a48c1e15",
+      "codexFrontmatterAdaptations": []
+    },
+    "handoff": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/productivity/handoff/SKILL.md",
+      "sourceFolderHash": "ce24892bd2d4b9e7fd5ac9b95c03175e18bef388",
+      "sourceSkillSha256": "4cbb043950dad2ffd3662ff1a5a0b51ae676004b5cae10e3787e8ee7a4ee69d3",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation",
+        "argument-hint"
+      ]
+    },
+    "implement": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/implement/SKILL.md",
+      "sourceFolderHash": "4804b466ab26c9b9d8d42917547db133d1f20a9f",
+      "sourceSkillSha256": "483bdc4ccf4ac31d86ac7beeaa0d0db80313e71e120bb8c59b3196ae5decd53d",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "implement-spec": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/implement-spec/SKILL.md",
+      "sourceFolderHash": "0cfefc751d0cb64f0c948ffcb17e13b94e778f08",
+      "sourceSkillSha256": "7a22dd2e60b8fcece478ced9d2533582adf3520d695acd3ab715341535c9e56d",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "improve-codebase-architecture": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "sourceFolderHash": "39bd9cc130f7dfcc4e3ea0b3613f6ebed0d0ad2b",
+      "sourceSkillSha256": "552240a5ab5cec6b67c15dd1ad6e9f6962b1bca6ce870059a8c2713760c20392",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "investigate-first": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/investigate-first/SKILL.md",
+      "sourceFolderHash": "c20174862b4748fc26ce55192a8431e9ef662947",
+      "sourceSkillSha256": "7cc19dd2fc457eb20d65c44dee4d1b72dcdfcd1617182f5bff666700f2a055d8",
+      "codexFrontmatterAdaptations": []
+    },
+    "lean-build": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/lean-build/SKILL.md",
+      "sourceFolderHash": "47bc09c3509d7f58f0f890836ab7f382987fd487",
+      "sourceSkillSha256": "4d498073c6312858b220e9a04b7456c2485c734edb077f6bb17d88a7ed96ad7a",
+      "codexFrontmatterAdaptations": []
+    },
+    "loop-me": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/in-progress/loop-me/SKILL.md",
+      "sourceFolderHash": "a0dfdc3562686d920900973b50289b36e2f7eafe",
+      "sourceSkillSha256": "e44d1cc3e760fb86ac42964c2a5f1fcac511715db50fb375f3f7be814de1eaa7",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation",
+        "argument-hint"
+      ]
+    },
+    "megacave": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/megacave/SKILL.md",
+      "sourceFolderHash": "95ace2804e684d6f4dd80a9b9cc203f66e0d8826",
+      "sourceSkillSha256": "139105296c0686c1ee24610caca1db293ab84162beb0d94aa7a9ad7cbc3352bf",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "migrate-to-shoehorn": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/misc/migrate-to-shoehorn/SKILL.md",
+      "sourceFolderHash": "0aea91a3599a4bf7aeec17e3262d4cbcfcbeec23",
+      "sourceSkillSha256": "de4da4c11d924fac79c924b2ee3d2db4a5cb98386eb490a599119463d036ae72",
+      "codexFrontmatterAdaptations": []
+    },
+    "migration": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/migration/SKILL.md",
+      "sourceFolderHash": "b1066e51b4e7cb9a943554a98c3810653ccff059",
+      "sourceSkillSha256": "fe7cf96a58b0521130fbb886dab2a326869d6ed0001e0306fd244014ba7a9662",
+      "codexFrontmatterAdaptations": []
+    },
+    "pr": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/pr/SKILL.md",
+      "sourceFolderHash": "00b896d811adffad747c7ca30078d909d60c7f93",
+      "sourceSkillSha256": "ab63f1cf78647389edcd386c9427c5dfca27ed2836930c24773ffee834c19bcd",
+      "codexFrontmatterAdaptations": []
+    },
+    "prototype": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/prototype/SKILL.md",
+      "sourceFolderHash": "e41d92e171f074a2b6887d8f6faca4a15c83d1ca",
+      "sourceSkillSha256": "714de632d116bb73f65cdb5a882db15b9369a6713b9a47c0fad827848f0bfbe3",
+      "codexFrontmatterAdaptations": []
+    },
+    "research": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/research/SKILL.md",
+      "sourceFolderHash": "0a6796c5667e95ed2301ba7381c123b4acb2ae1a",
+      "sourceSkillSha256": "985569f15739c713d6784887c3d186d4ef9ac85bec5ad9c068d25bf0739928e4",
+      "codexFrontmatterAdaptations": []
+    },
+    "retro": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/retro/SKILL.md",
+      "sourceFolderHash": "335c1862a43da9d629abafdb79ca0c0de118be08",
+      "sourceSkillSha256": "33fbc28568e3146f20fd908b12998bc0ab30aa4f4c87288199a40793efa94696",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "safe-refactor": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/safe-refactor/SKILL.md",
+      "sourceFolderHash": "49fd11fcfa4fd63ab175380ed8f80b992090e5e4",
+      "sourceSkillSha256": "cd52867aba26aafb53379d43068cef9b2feca3a3fff850f877a99f710ccd02c0",
+      "codexFrontmatterAdaptations": []
+    },
+    "scaffold-exercises": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/misc/scaffold-exercises/SKILL.md",
+      "sourceFolderHash": "44a0ee332b9d67ebbd59389c7eb4e5aff1ce845c",
+      "sourceSkillSha256": "75f5c9d771606fb9762f16522efc954df11c324f87148d8ff069bce166257de9",
+      "codexFrontmatterAdaptations": []
+    },
+    "setup-matt-pocock-skills": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "sourceFolderHash": "aafaabf96fa3945d8a4069317a7a6d36b7169670",
+      "sourceSkillSha256": "f148858ffb7f63c03c06fca06e6fdb1d91a35c6b293244b8fdfacd5f4cc028c4",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "setup-pre-commit": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/misc/setup-pre-commit/SKILL.md",
+      "sourceFolderHash": "5b63f9f665bacc9be04cae51982e9ef1469d6699",
+      "sourceSkillSha256": "c9819d7f1e3b198064edc1faa3154224ed67395e9f07f5d3cea4b67cf0a11a98",
+      "codexFrontmatterAdaptations": []
+    },
+    "setup-ts-deep-modules": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+      "sourceFolderHash": "b32508a8a7d62c07d32d7c5cff84d357719def7f",
+      "sourceSkillSha256": "29acca66ac99d4532e2a6f0370d8125d7cba1e87c9ac66573203c75189d3e6c7",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "surgical-patch": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/surgical-patch/SKILL.md",
+      "sourceFolderHash": "f7316a9431eff84811b6fd100af70e6984751c91",
+      "sourceSkillSha256": "81ea9f7b51409970099e04b98875dd65806cd35472f9a774b847030328187387",
+      "codexFrontmatterAdaptations": []
+    },
+    "tdd": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/tdd/SKILL.md",
+      "sourceFolderHash": "667dbdd00c09d0e2189e082986e6a4d61a67c2a6",
+      "sourceSkillSha256": "5505d25bbaa8fc14a79e4d20163936958992a2995b7f1dd1d6197edc9ed722e0",
+      "codexFrontmatterAdaptations": []
+    },
+    "teach": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/productivity/teach/SKILL.md",
+      "sourceFolderHash": "3fd617b610e59acbb99644de1ef37e394ff53cd1",
+      "sourceSkillSha256": "550482c2d674b085c9043b87bfdc14a8f2ec453c736119e7fcbb1e9332bffeba",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation",
+        "argument-hint"
+      ]
+    },
+    "to-questionnaire": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/productivity/to-questionnaire/SKILL.md",
+      "sourceFolderHash": "46dfbeeba12a9e52eef446676f42e7551023d9a9",
+      "sourceSkillSha256": "b5eb929842ee0e93d867c5e906d183d350f2f2d149eaeaa86967d94d8eda1d3b",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "to-spec": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/to-spec/SKILL.md",
+      "sourceFolderHash": "136b9651747cfccbfbb7c50a6b0dfb757e7547d2",
+      "sourceSkillSha256": "43ad9cf318e5e7d3d1fa360253a37021796dc87a0c2e595ad262661a10f85088",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "to-tickets": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/to-tickets/SKILL.md",
+      "sourceFolderHash": "2dee20ad722a31c04ededf9f2d83842473573045",
+      "sourceSkillSha256": "56ec23c5b2782785d4e65bff9e315b6d3aeb4ef977c174a219e99489fada1995",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "triage": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/triage/SKILL.md",
+      "sourceFolderHash": "4cb951d62ecccaed601cdc5f9a1b7b3d8a799635",
+      "sourceSkillSha256": "917b0baf74be583e74f110857ed45df2766617f75c00baf61fd136d7af515edf",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "ultracave": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/ultracave/SKILL.md",
+      "sourceFolderHash": "4046bb0979819379d3f8d052c229bb6ecc2951e6",
+      "sourceSkillSha256": "a8da5b0b3501b853e1b98f2ae09fe8dc9c0edf481b1d3fa9529f8557011c1ef8",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "verify-and-stop": {
+      "source": "https://github.com/JuliusBrussee/caveman.git",
+      "sourcePath": "skills/verify-and-stop/SKILL.md",
+      "sourceFolderHash": "daaaceac55b83384dc3685c3b946699b9bc29331",
+      "sourceSkillSha256": "3d5599f49771b864eba94f27f456fda295c48c1a37fa6ba2f65fdcb13cc32acb",
+      "codexFrontmatterAdaptations": []
+    },
+    "wait-what": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/productivity/wait-what/SKILL.md",
+      "sourceFolderHash": "c8b050e6b8c711be1a9008ceacb2126914f0763e",
+      "sourceSkillSha256": "d961bb37defd975c539427edb8f450cdbccdcdd552e213c1ece46676a7970905",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "wayfinder": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/wayfinder/SKILL.md",
+      "sourceFolderHash": "32b0ce970b1394ede47116e1d3e07f9ccc87591f",
+      "sourceSkillSha256": "9be7b478c389605a24517d27752f278933588da97a1b5921b165f455edf4c5b7",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "wizard": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/engineering/wizard/SKILL.md",
+      "sourceFolderHash": "e396d3ba97c723a78ffd350fb14a3c409137b306",
+      "sourceSkillSha256": "bdf31d48211ea559878f95a4f344aeabf8d85897488ba564382bab0b000daac1",
+      "codexFrontmatterAdaptations": []
+    },
+    "writing-beats": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/in-progress/writing-beats/SKILL.md",
+      "sourceFolderHash": "3a28fb076fdaaec0927080718abb98fc0f340011",
+      "sourceSkillSha256": "a96abafa2372eede8267d770138b322d6125da8adaa7ccf0a5e08e4ee13ee71e",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "writing-for-agents": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/productivity/writing-for-agents/SKILL.md",
+      "sourceFolderHash": "ad2925850efb8973a72d2e666f7a975f9a2d4a9b",
+      "sourceSkillSha256": "551adca942227b44192edba88acd4e8db911f0121ce58ad16944ccf6a896a74a",
+      "codexFrontmatterAdaptations": []
+    },
+    "writing-fragments": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/in-progress/writing-fragments/SKILL.md",
+      "sourceFolderHash": "98e500e0097ec80f52f6a024c5a2ff6d15235bdb",
+      "sourceSkillSha256": "298b0edd23df229183630de592ed8aa4289233560f2040691f6eb77caeaad4ea",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    },
+    "writing-shape": {
+      "source": "https://github.com/mattpocock/skills.git",
+      "sourcePath": "skills/in-progress/writing-shape/SKILL.md",
+      "sourceFolderHash": "ac92229646fccf7315ae139c37b479b3790617f2",
+      "sourceSkillSha256": "f5e6c57bdd85178ace4a260c92f46da6b64ddee18215b461d875739c68976f72",
+      "codexFrontmatterAdaptations": [
+        "disable-model-invocation"
+      ]
+    }
+  }
+}
