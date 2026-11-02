@@ -28,5 +28,6 @@ Start a new Codex chat after installation or updates; restart the app if changes
 
 - `caveman`: concise responses; invoke with `$caveman` or `/caveman`.
 - `ultracave`: maximum compression; invoke with `$ultracave` or `/caveman ultra`.
+- `github-workflow`: plan, create an issue, obtain implementation approval, choose a checkout/worktree, implement, and open a feature PR. Merge only after separate approval and successful CI, then update the local base and delete the feature branch. Changesets release PRs are always merged manually. Invoke with `$github-workflow`.
 
 The imported skill instructions and existing resources are retained. The legacy ultracave `disable-model-invocation` frontmatter flag is represented by Codex’s supported `agents/openai.yaml` setting `policy.allow_implicit_invocation: false`.
