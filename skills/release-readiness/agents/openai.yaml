@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release Readiness"
+  short_description: "Assess release metadata, compatibility, and evidence"
+  default_prompt: "Use $release-readiness to assess the target release and report readiness, blockers, and missing evidence without publishing or merging release PRs."
