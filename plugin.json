@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "personal-skills",
-  "version": "1.1.4",
-  "description": "Personal Codex skills for coding standards and project delivery.",
+  "version": "1.2.0",
+  "description": "Personal Codex skills for coding standards, project delivery, feature verification, and release preparation.",
   "extensions": {
     "com.openai": {
       "interface": {

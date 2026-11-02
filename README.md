@@ -43,6 +43,13 @@ Start a new Codex chat after installation or updates; restart the app if changes
 
 - `coding-workflow`: general coding delivery workflow, independent of repository host and issue tracker. Read the bundled `coding-guidelines` skill and project standards before planning; enforce agreed guidelines during implementation and verify them before the PR. Plan, record the task, obtain implementation and checkout/worktree approval, implement, validate, and open the project’s PR/MR. Merge feature work only after separate approval and successful CI, then update the local base and delete the feature branch. Changesets release PRs are always merged manually. Projects without hosted tracking/review agree on a local delivery path. Invoke with `$coding-workflow`.
 - `coding-guidelines`: audit existing standards and fill agreed gaps, or establish consistent guidelines in new projects. Includes self-contained CRM tenant-web/Crateview registry-ui baselines for linting, formatting, and exact Vue block/attribute ordering. JSDoc/TSDoc coverage follows the user's preference: all hand-written functions, composables, and exported types. Preserve intentional project conventions; agree on conflicting migrations first. Invoke with `$coding-guidelines`.
+- `vue-feature-check`: verify changed Vue/Nuxt behavior, interaction states, accessibility, responsive layout, and supported locales. Distinguish mocked component checks from browser/backend evidence. Invoke with `$vue-feature-check`.
+- `api-contract-check`: compare runtime validation/serialization, DTOs/schemas, OpenAPI, and consuming clients; verify relevant authorization and tenant/resource isolation. Invoke with `$api-contract-check`.
+- `release-readiness`: assess a fixed release candidate's version/changeset metadata, compatibility notes, current checks, and required package/container evidence. Assessment only; release PRs stay manual and it never publishes or deploys. Invoke with `$release-readiness`.
+- `database-change`: plan and implement approved schema/data migrations with disposable local checks, compatible rollout stages, and explicit rollback/data-recovery constraints. It does not execute production migrations. Invoke with `$database-change`.
+- `dependency-update`: apply scoped upgrades using actual runtime/package-manager pins, catalogs and lockfile ownership; verify coupled consumers and migration impact. Invoke with `$dependency-update`.
+
+All seven personal skills are included in `personal-skills@tobiaswaelde`. The coding workflow selects [relevant specialist checks](skills/coding-workflow/references/specialist-routing.md) by the current task; the specialists reuse its approvals, task commits, and coding guidelines. They do not automatically run every audit or change project tooling.
 
 ## External marketplaces
 
@@ -66,7 +73,7 @@ codex plugin marketplace upgrade caveman
 codex plugin add caveman@caveman
 ```
 
-`personal-skills` contains only `coding-workflow` and `coding-guidelines`. Caveman and Matt Pocock skills, resources, and compatibility behavior come directly from their upstream plugins. Caveman Cloud and Learn commands still require their upstream CLI and service authentication.
+`personal-skills` contains the seven personal workflows listed above. Caveman and Matt Pocock skills, resources, and compatibility behavior come directly from their upstream plugins. Caveman Cloud and Learn commands still require their upstream CLI and service authentication.
 
 The nine previously installed Matt Pocock `in-progress` and `misc` skills were removed locally; the upstream plugin determines its own supported skill set.
 
