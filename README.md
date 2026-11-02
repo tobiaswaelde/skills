@@ -24,6 +24,8 @@ The plugin synchronizes the skill; global `AGENTS.md` settings are configured se
 
 Workflow and guideline decisions use the bundled [native interactive decision policy](skills/coding-workflow/references/interactive-decisions.md), including implementation/worktree selection and feature-PR merge approval. Actual UI availability depends on the client and tools exposed in the current mode; unavailable controls fall back to a focused chat question without bypassing approval.
 
+Larger features are planned as small, ordered implementation tasks with acceptance checks. Each completed task gets its own commit and recorded validation before the next dependent task starts; feature-wide checks run before the PR. This normally stays within one feature issue, branch, and PR, and retains the agreed approval gates and merge method.
+
 ## Create and publish skills
 
 Edit the source checkout, never the installed cache. Ask `$skill-creator` to create new skills under this repository’s `skills/` directory. Each skill needs its own folder and `SKILL.md`.
