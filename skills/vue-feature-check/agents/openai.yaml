@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vue Feature Check"
+  short_description: "Verify Vue behavior, accessibility, and locales"
+  default_prompt: "Use $vue-feature-check to verify the changed Vue feature and report reproducible behavior, accessibility, and localization findings."
