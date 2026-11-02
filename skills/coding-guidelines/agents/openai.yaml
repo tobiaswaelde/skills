@@ -1,0 +1,4 @@
+interface:
+  display_name: "Coding Guidelines"
+  short_description: "Audit and establish consistent coding standards"
+  default_prompt: "Use $coding-guidelines to analyze this project and establish consistent linting, documentation, and framework-specific coding standards."
