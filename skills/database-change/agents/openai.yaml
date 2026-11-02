@@ -1,0 +1,4 @@
+interface:
+  display_name: "Database Change"
+  short_description: "Plan and verify compatible schema and data changes"
+  default_prompt: "Use $database-change to plan and locally verify this database change, including data migration, compatibility, and rollback constraints."
