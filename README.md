@@ -13,13 +13,16 @@ codex plugin add personal-skills@tobiaswaelde
 
 ## Use the coding workflow by default
 
-Automatic invocation is enabled for `coding-workflow`. To make it the default across projects on each device, add this instruction to that device’s `~/.codex/AGENTS.md`, preserving existing instructions:
+Automatic invocation is enabled for `coding-workflow`. To make it the default across projects on each device, add these instructions to that device’s `~/.codex/AGENTS.md`, preserving existing instructions:
 
 ```markdown
 - Use the `coding-workflow` skill by default for coding project tasks in every project, regardless of repository host or issue tracker, unless I explicitly request a different workflow. Read and follow its instructions without requiring me to invoke it by name.
+- Prefer native Codex question/selection controls for clarifications and approvals whenever an available tool supports that purpose in the current mode. Offer concise action-specific choices instead of requiring a typed "yes"; wait for an actually submitted answer before dependent work.
 ```
 
 The plugin synchronizes the skill; global `AGENTS.md` settings are configured separately on each device.
+
+Workflow and guideline decisions use the bundled [native interactive decision policy](skills/coding-workflow/references/interactive-decisions.md), including implementation/worktree selection and feature-PR merge approval. Actual UI availability depends on the client and tools exposed in the current mode; unavailable controls fall back to a focused chat question without bypassing approval.
 
 ## Create and publish skills
 

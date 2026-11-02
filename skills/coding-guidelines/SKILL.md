@@ -7,6 +7,8 @@ description: Analyze and improve coding guidelines in existing projects or estab
 
 Establish clear, executable coding standards, adapting to the project's language, framework, and existing conventions. The bundled web baseline distills CRM tenant-web and Crateview registry-ui; it is self-contained and does not require either repository, its paths, or its dependencies.
 
+When clarifying standards or asking about a conflicting migration, use the bundled [native interactive decision policy](../coding-workflow/references/interactive-decisions.md). Offer concrete Codex selection options through tools available for that purpose and mode, rather than requiring the user to type approval; preserve the active workflow's existing gates.
+
 ## 1. Inspect before changing standards
 
 - Read applicable project instructions, contribution guides, coding guidelines, manifests and lockfiles, formatter/linter/type-check configuration, editor settings, CI, and any hooks. In monorepos inspect inherited and package-local configuration. Sample representative source, including Vue components and public APIs where applicable.
