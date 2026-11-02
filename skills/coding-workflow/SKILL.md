@@ -1,6 +1,6 @@
 ---
 name: coding-workflow
-description: Guide coding project changes from planning through a recorded task, approved implementation, validation, and delivery. Use for coding tasks following this workflow, regardless of repository host, issue tracker, programming language, or framework, or when explicitly invoked as coding-workflow.
+description: Default workflow for coding project tasks in every project, from planning through a recorded task, approved implementation, validation, and delivery. Use automatically when planning or implementing coding changes, regardless of repository host, issue tracker, language, or framework, unless the user explicitly requests a different workflow.
 ---
 
 # Coding workflow

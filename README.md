@@ -11,6 +11,16 @@ codex plugin marketplace add git@github.com:tobiaswaelde/skills.git --ref main
 codex plugin add personal-skills@tobiaswaelde
 ```
 
+## Use the coding workflow by default
+
+Automatic invocation is enabled for `coding-workflow`. To make it the default across projects on each device, add this instruction to that device’s `~/.codex/AGENTS.md`, preserving existing instructions:
+
+```markdown
+- Use the `coding-workflow` skill by default for coding project tasks in every project, regardless of repository host or issue tracker, unless I explicitly request a different workflow. Read and follow its instructions without requiring me to invoke it by name.
+```
+
+The plugin synchronizes the skill; global `AGENTS.md` settings are configured separately on each device.
+
 ## Create and publish skills
 
 Edit the source checkout, never the installed cache. Ask `$skill-creator` to create new skills under this repository’s `skills/` directory. Each skill needs its own folder and `SKILL.md`.
