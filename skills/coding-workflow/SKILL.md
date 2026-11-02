@@ -1,13 +1,15 @@
 ---
-name: github-workflow
-description: Run an issue-driven GitHub delivery workflow from planning through implementation, a feature PR, CI, and an approved merge. Use when the user requests this complete workflow or explicitly invokes github-workflow; ordinary edits or isolated GitHub operations do not require it.
+name: coding-workflow
+description: Guide coding project changes from planning through a recorded task, approved implementation, validation, and delivery. Use for coding tasks following this workflow, regardless of repository host, issue tracker, programming language, or framework, or when explicitly invoked as coding-workflow.
 ---
 
-# GitHub workflow
+# Coding workflow
 
 Keep the conversation in the user's language. Write issues, branch slugs, PRs, commits, and changesets in en-US. Follow the target repository's contribution, signing, testing, and release conventions. The approval gates below remain required even if repository guidance permits autonomous implementation or self-merging.
 
-Use connected GitHub tools for supported operations and local Git for checkout, implementation, and commits. Use an available GitHub CLI/API for missing capabilities. Discover actual commands and credentials; do not add mandatory tools or install software merely to follow this skill. Optional specialist skills may help, but this workflow must remain usable without them.
+Discover the project’s version control, repository host, issue tracker, review process, CI, and release tooling from repository instructions, remotes, configuration, and existing artifacts. Use their available connectors, CLIs, or APIs; use local version-control tools for checkout and commits. GitHub, GitLab, Bitbucket, Azure DevOps, and separate trackers such as Jira or Linear are examples, not dependencies. Discover actual commands and credentials; do not install mandatory tools or migrate providers merely to follow this skill. Optional specialist skills may help, but this workflow must remain usable without them.
+
+Below, “issue” means the project’s issue or task record; “PR” means its pull request, merge request, or equivalent code-review artifact. Use the provider’s actual terminology, identifiers, links, closing syntax, and merge policies. Git-specific branch/worktree instructions apply to Git projects; adapt to the configured version-control equivalents where supported. If the project lacks a tracker, remote, review mechanism, or version control, ask how to record the task and deliver the change (for example, a local task document and local-only delivery). Keep the same approval gates, adapt only the unavailable steps, and report the agreed local result without inventing remote artifacts or claiming an unperformed merge.
 
 When resuming, reuse existing task artifacts and explicit task-specific approvals recorded in the conversation. Ask again only for a missing approval or materially changed scope. Implementation approval counts only when it was given after the issue was shown; plan approval alone never satisfies that gate.
 
@@ -15,7 +17,7 @@ Before mutating an existing branch or PR, classify it using repository automatio
 
 ## 1. Plan and obtain plan approval
 
-- Inspect repository instructions, remotes, working changes, worktrees, existing issues/PRs, CI, and release configuration. Identify the target repository and base branch (`main` when present, otherwise the repository's configured default).
+- Inspect repository instructions, remotes, working changes, worktrees, existing issues/PRs, CI, and release configuration. Identify the target repository, task tracker, and agreed integration/base branch from project conventions; use the configured default when unspecified (`main` when that is the project default).
 - Plan in the actual Codex `/plan` mode. A skill cannot grant itself a mode change: if the client has not enabled Plan mode, ask the user to enable it before planning. Reuse a sufficiently detailed, explicitly approved plan already in this conversation rather than repeating it.
 - Resolve material ambiguities and present a decision-complete plan with scope, implementation details, acceptance criteria, and validation. Obtain explicit plan approval. Issue creation and all later mutations also require the client to leave Plan mode; user approval alone does not override that restriction.
 
@@ -28,7 +30,7 @@ Before mutating an existing branch or PR, classify it using repository automatio
 
 ## 3. Create the issue branch and implement
 
-- Fetch the latest base and create the task branch from that remote base. Follow repository naming conventions; otherwise use `<issue-number>-<english-kebab-case-title>`. Link the branch to the issue using GitHub's linked-branch capability when available; otherwise record the branch in the issue and link the eventual PR. A name alone is not proof of a GitHub Development association.
+- Fetch the latest base and create the task branch from that remote base. Follow repository naming conventions; otherwise use `<issue-id>-<english-kebab-case-title>`. Link the branch to the issue through the provider’s supported association mechanism when available; otherwise record the branch in the issue and link the eventual PR. A name alone is not proof of a provider-side association.
 - Reuse an existing branch/worktree only after verifying it belongs to this issue and inspecting its changes. Use the selected checkout/worktree; when Codex managed-worktree tools are available, use and attach those appropriately.
 - Implement the agreed scope, required documentation, and meaningful tests. Run the repository's relevant checks and repair task-related failures. Record actual results and distinguish unrelated or externally blocked failures. Material scope changes require updating the issue and obtaining agreement before expanding the work.
 - Detect an existing Changesets setup from manifests, configuration, and repository instructions. When required by those rules, add a changeset for the affected packages with the appropriate SemVer bump using the repository's package manager and Changesets CLI. Do not invent a changeset requirement for a repository without Changesets, or run release/version/publish commands as part of a feature task.
@@ -43,11 +45,11 @@ Before mutating an existing branch or PR, classify it using repository automatio
 
 - Check repository-required PR status checks, review/merge requirements, and any explicitly required full-CI workflows for the current head and applicable base. A push, old successful run, diagnostic run, pending check, or absence of visible checks is not proof that required CI passed. If the repository intentionally has no CI, disclose that and obtain an explicit exception before merging.
 - Respect CI opt-in labels and repository policies. Fix task-related CI failures, validate, and push corrections. Verify checks again after every changed head or base; do not bypass branch protection or required reviews. For blocked checks or missing access, report the specific blocker and retain issue/branch/PR context for resumption instead of claiming completion or creating an unrequested background monitor.
-- With the user's merge approval and all requirements satisfied, merge the feature PR. Default to squash where allowed; repository-enforced methods take precedence. Verify GitHub reports the intended PR as merged before cleanup.
+- With the user's merge approval and all requirements satisfied, merge the feature PR. Default to squash where allowed; repository-enforced methods take precedence. Verify the hosting/review provider reports the intended PR as merged before cleanup.
 
 ## 6. Update the local base and delete the feature branch
 
 - Fetch and fast-forward the local base branch after the confirmed feature merge. In a worktree flow, update the checkout that owns that branch rather than trying to check it out twice. Preserve dirty checkouts and divergent local history; report a concrete blocker instead of resetting them.
-- Delete the merged feature branch remotely and locally, tolerating a remote branch already deleted by GitHub. Verify it is the task branch and has no new commits beyond the merged PR head. For squash merges, verify the GitHub merge and matching branch head rather than treating Git ancestry alone as proof of unmerged work.
+- Delete the merged feature branch remotely and locally, tolerating a remote branch already deleted by the host. Verify it is the task branch and has no new commits beyond the merged PR head. For squash merges, verify the provider-confirmed merge and matching branch head rather than treating Git ancestry alone as proof of unmerged work.
 - Release a task-created worktree only when its work is safely merged and it contains no uncommitted or additional work; use Codex's managed-worktree lifecycle when applicable. Preserve pre-existing or dirty worktrees and explain if they prevent local branch deletion. Never delete the base branch.
 - Finish with concise `Changed`, `Tests`, and `Notes` sections, omitting empty sections. Link the issue and PR, report merge and cleanup status, and identify any remaining blocker truthfully.

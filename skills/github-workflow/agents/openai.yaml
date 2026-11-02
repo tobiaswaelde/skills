@@ -1,4 +1,0 @@
-interface:
-  display_name: "GitHub Workflow"
-  short_description: "Plan, implement, and ship issue-linked feature PRs"
-  default_prompt: "Use $github-workflow to take this task from an approved plan through an issue and feature PR to an approved merge."

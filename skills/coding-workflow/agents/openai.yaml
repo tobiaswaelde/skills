@@ -1,0 +1,4 @@
+interface:
+  display_name: "Coding Workflow"
+  short_description: "Plan, implement, and deliver coding project changes"
+  default_prompt: "Use $coding-workflow to take this task from an approved plan through the project’s task tracking and review process to approved delivery."

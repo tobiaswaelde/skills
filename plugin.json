@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "personal-skills",
-  "version": "1.0.3",
-  "description": "Personal Codex skills for concise responses and issue-driven GitHub delivery.",
+  "version": "1.0.4",
+  "description": "Personal Codex skills for concise responses and coding project delivery.",
   "extensions": {
     "com.openai": {
       "interface": {
