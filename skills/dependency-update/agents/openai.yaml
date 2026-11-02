@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dependency Update"
+  short_description: "Update scoped dependencies with compatibility checks"
+  default_prompt: "Use $dependency-update to plan and apply the requested dependency update while preserving project pins and verifying affected consumers."
