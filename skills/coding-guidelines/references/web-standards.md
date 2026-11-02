@@ -1,85 +1,22 @@
-# JavaScript, TypeScript, and Vue standards
+# Web standards: integration guidance
 
-Use these defaults when starting a matching project or filling an agreed gap. Existing deliberate conventions take precedence until a migration is agreed. These are personal project conventions, not claims that a framework requires this style.
+Read the [canonical guideline template](../assets/templates/coding-guidelines.md), especially JavaScript/TypeScript and Vue sections, before implementing rules. Formatting defaults, documentation policy, and executable Vue rule fragments live there rather than in a second baseline. Read [source analysis](source-analysis.md) when an observed source rule or a difference between the references needs verification.
 
-## Formatting and linting
+## Adapt to the target project
 
-- Two-space indentation, semicolons, single-quoted JavaScript/TypeScript strings, trailing commas, and a 120-character print width. Preserve the existing line-ending policy; use LF in a new project. HTML attribute quotes remain controlled by the framework/formatter.
-- Separate the final import from following statements with a blank line; keep adjacent imports together. Use existing import organization where configured. Review side-effect imports before applying import removal or sorting.
-- In new JS/TS projects, prefer ESLint plus Prettier with compatible framework/TypeScript presets and a single clear formatting pipeline. Preserve an existing working alternative rather than installing overlapping tools. Retain Nuxt's integration when present; do not replace it with a generic Vue config or edit generated `.nuxt` files.
-- Use strict static checks appropriate to the existing type system. Prefer known domain types or `unknown` with narrowing over `any`; exceptions need a concrete boundary reason. Add compatible rules for previously uncovered cases rather than disabling recommended presets.
-- Exclude dependencies, generated code, framework/build output, coverage/test reports, and vendor sources. Let the package manager update lockfiles; do not run style fixes over lockfiles or generated data. Tailwind class sorting is conditional on Tailwind being used, with its real stylesheet/configuration supplied to the matching plugin.
-- Standard command intent: `lint:check` is non-mutating and fails on warnings; `lint:fix` explicitly applies ESLint fixes; `format:check` checks formatting; `format:fix` explicitly formats. Reuse equivalent established commands instead of adding aliases just to rename them. Keep typechecking separate and discover its actual command. In monorepos use the owning package/task runner and preserve check-only versus mutating cache behavior.
+- Preserve existing intentional choices and agree on contradictory migrations. For new projects use the applicable template defaults; prefer LF when no line-ending policy exists. Do not describe those defaults as universal framework requirements.
+- Reuse the installed ESLint/framework integration and package manager. Nuxt integrations may combine generated inputs with project rules; edit project-owned config, not `.nuxt` output. Confirm file globs and Vue/TypeScript parser delegation in effective configuration.
+- The template's JavaScript fragments are rule objects, not complete configurations or dependency manifests. Merge them into compatible Vue-file configuration with registered plugins/parsers; verify supported options against the installed version.
+- Preserve working formatter/linter alternatives instead of adding overlapping tools. Use zero-warning checks in new setups; retain established script names and actual thresholds for existing projects. In monorepos retain package ownership, affected checks, and check-only versus mutating cache behavior.
+- Import organization and Tailwind sorting are conditional integrations. Discover the real stylesheet/configuration and review import edits for side effects. Do not transfer CRM aliases, Nx targets, registry protocols, locale namespaces, or dependency versions into unrelated projects.
+- For Vue 2, JavaScript SFCs, Options API, or legitimate extra script/custom blocks, preserve compatible syntax and existing component contracts. A style setup does not authorize a Vue migration. Significant whitespace and `v-bind`/event precedence require actual diff review, not a claim that every autofix is behavior-neutral.
 
-## Vue single-file components
+## Formatter and lint agreement
 
-Default top-level order is `<template>`, `<script setup lang="ts">`, then `<style>` when present. Separate top-level blocks with one blank line. Do not add empty blocks or convert existing Options API/custom blocks solely for style. Account for legitimate additional script/custom blocks through the project's existing conventions.
+A Prettier pass may collapse a short text element while the template's content-newline rules expand it. Use compatible configuration or a deterministic full pipeline and make the non-mutating format check compare against its complete canonical output. A separate vanilla Prettier check must not reject the chosen final layout.
 
-Keep script and style contents unindented relative to their block. Templates use two spaces per nested level. Use multiline element content for non-inline elements, retaining the reference projects' `span` exception; preserve meaningful whitespace in text, preformatted content, and mixed inline markup. Apply structure rules only when they preserve rendering and behavior.
+Verify the pipeline on representative fixtures twice, requiring identical second-pass bytes and passing final lint/format checks. Inspect remaining diagnostics after autofixes; one invocation may not settle every ordering violation. Report conflicts instead of silently dropping agreed rules or alternating writes indefinitely. A custom Vue formatting pass is an integration option, not a requirement to copy a reference repository's script.
 
-For matching versions of `eslint-plugin-vue`, the canonical ordering rules are:
+## Version-specific sources
 
-```js
-const vueOrderingRules = {
-  'vue/block-order': ['error', { order: ['template', 'script', 'style'] }],
-  'vue/attributes-order': [
-    'error',
-    {
-      order: [
-        'DEFINITION',
-        'LIST_RENDERING',
-        'CONDITIONALS',
-        'RENDER_MODIFIERS',
-        'UNIQUE',
-        'TWO_WAY_BINDING',
-        'OTHER_DIRECTIVES',
-        'GLOBAL',
-        'ATTR_STATIC',
-        'ATTR_DYNAMIC',
-        'EVENTS',
-        'CONTENT',
-      ],
-      alphabetical: false,
-    },
-  ],
-};
-```
-
-Merge these rules into the project's Vue-file configuration and ensure `vue-eslint-parser` delegates TypeScript script parsing appropriately. The snippet is a rule fragment, not a complete ESLint config or dependency manifest. Verify actual categories and supported options against the installed plugin version.
-
-Attribute groups mean structural/behavioral directives first; identity bindings such as `key`/`ref`, two-way binding and remaining directives next; then global attributes such as `id`, static values, dynamic values, event listeners, and content bindings. Preserve order within categories rather than imposing alphabetical sorting. Use a separate wrapper if a loop and a condition need different scopes; an ordering rule is not a reason to put `v-if` and `v-for` on the same element.
-
-Ordering fixes must preserve `v-bind` spread precedence, duplicate binding/event semantics, comments, slots, and component contracts. Review the actual diff and narrow a fix or record a justified exception when simple reordering changes behavior.
-
-The reference spacing rules, where compatible with the project's formatter, are:
-
-```js
-const vueSpacingRules = {
-  'vue/html-indent': [
-    'error',
-    2,
-    { attribute: 1, baseIndent: 1, closeBracket: 0, alignAttributesVertically: true, ignores: [] },
-  ],
-  'vue/multiline-html-element-content-newline': [
-    'error',
-    { ignoreWhenEmpty: true, ignores: ['span'], allowEmptyLines: false },
-  ],
-  'vue/padding-line-between-blocks': ['error', 'always'],
-  'vue/singleline-html-element-content-newline': [
-    'error',
-    { ignoreWhenNoAttributes: false, ignoreWhenEmpty: true, ignores: ['span'] },
-  ],
-};
-```
-
-Do not assume these ESLint layout rules and Prettier are compatible in every project. Preserve the chosen final template layout through a tested deterministic pipeline if needed, and make check commands verify that final output. Never claim compatibility based only on both tools being installed. The reference projects sometimes use a dedicated Vue formatting pass; reproduce the required behavior locally only when necessary, not their repository-specific paths.
-
-For example, Prettier can collapse a short text element while the content-newline rule expands it. If the agreed pipeline is Prettier followed by Vue lint fixes, its non-mutating format check must compare the source against that complete canonical output. A separate vanilla Prettier check rejecting that final output would contradict the pipeline; align the check instead of alternating writes or silently dropping the intended layout rule. Inspect remaining diagnostics after fixes; one autofix invocation may not resolve every ordering violation.
-
-For new Vue components use typed props/emits and `<script setup lang="ts">`. Follow existing model/event contracts; do not rewrite components or remove explicit validation/persistence adapters just for style. Preserve accessibility, localization, and pending/error states.
-
-## Reference provenance
-
-Defaults were derived from CRM tenant-web's Prettier, Vue attribute/spacing config, and lint/format contract, together with Crateview registry-ui's `docs/coding-guidelines.md` and ESLint block ordering. Both use the attribute categories above. CRM can express ordering as warnings while its check script rejects warnings; new-project defaults above use errors directly. Project names are provenance only, never required runtime checkouts or package aliases.
-
-For version-specific semantics consult the official [Vue attribute-order rule](https://eslint.vuejs.org/rules/attributes-order), [block-order rule](https://eslint.vuejs.org/rules/block-order), and the installed formatter/framework documentation.
+Use the official [attribute-order rule](https://eslint.vuejs.org/rules/attributes-order), [block-order rule](https://eslint.vuejs.org/rules/block-order), and the installed framework/formatter documentation to resolve compatibility questions. The skill and template are self-contained; reference-project checkouts are not runtime dependencies.

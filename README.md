@@ -42,3 +42,9 @@ Start a new Codex chat after installation or updates; restart the app if changes
 - `coding-guidelines`: audit existing standards and fill agreed gaps, or establish consistent guidelines in new projects. Includes self-contained CRM tenant-web/Crateview registry-ui baselines for linting, formatting, and exact Vue block/attribute ordering. JSDoc/TSDoc coverage follows the user's preference: all hand-written functions, composables, and exported types. Preserve intentional project conventions; agree on conflicting migrations first. Invoke with `$coding-guidelines`.
 
 The imported skill instructions and existing resources are retained. The legacy ultracave `disable-model-invocation` frontmatter flag is represented by Codex’s supported `agents/openai.yaml` setting `policy.allow_implicit_invocation: false`.
+
+## Coding guideline template
+
+The `coding-guidelines` skill includes a concrete [project guideline template](skills/coding-guidelines/assets/templates/coding-guidelines.md) and a [reference-project analysis](skills/coding-guidelines/references/source-analysis.md). The template contains the reusable standards; the analysis records CRM tenant-web/registry-ui source revisions, common rules, differences, and the user's additional documentation policy.
+
+When applying it, resolve project fields and actual check commands, remove irrelevant technology sections, and merge with existing intentional standards. No access to either reference repository is required to use the installed template.
