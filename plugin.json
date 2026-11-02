@@ -1,6 +1,15 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "personal-skills",
-  "version": "1.0.1",
-  "description": "Personal Codex skills: caveman and ultracave."
+  "version": "1.0.2",
+  "description": "Personal Codex skills: caveman and ultracave.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Personal Skills",
+        "logo": "./assets/logo.svg",
+        "composerIcon": "./assets/logo.svg"
+      }
+    }
+  }
 }
