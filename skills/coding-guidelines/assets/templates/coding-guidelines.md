@@ -66,6 +66,58 @@ export function quotaToBytes(quotaMiB: number): number {
 This example illustrates a documented contract; it is not a utility every project must implement. A syntax-only documentation checker does not verify that required declarations are documented or that comments are correct. Verify presence and useful contract coverage separately.
 <!-- section:javascript-typescript:end -->
 
+<!-- section:html:start -->
+## HTML and Vue tag layout
+
+- A short opening or self-closing tag may stay on one line when its opening `<` and closing `>` or `/>` fit together within the project's configured line width. Attribute count alone does not determine wrapping.
+- When a tag spans multiple lines, place its closing `>` or `/>` on a separate line, aligned with the opening `<`. End that line immediately after the delimiter; any following content or tag starts on the next line.
+- Preserve the existing attribute order and content-layout rules. Single-line opening tags retain existing inline-content exceptions. Preserve significant whitespace, preformatted content, and mixed inline text when applying this layout; resolve behavior-changing whitespace conflicts explicitly rather than blindly autofixing them.
+
+Valid layouts:
+
+```html
+<div class="example">
+  Content
+</div>
+
+<div
+  class="example"
+  data-value="value"
+>
+  Content
+</div>
+```
+
+```vue
+<MyComponent :value="value" />
+
+<MyComponent
+  :value="value"
+  class="example"
+/>
+```
+
+Invalid layouts: a multiline tag's delimiter shares the last attribute line, or content follows a delimiter on its own line.
+
+```html
+<div
+  class="example">
+  Content
+</div>
+
+<div
+  class="example"
+>Content</div>
+```
+
+```vue
+<MyComponent
+  :value="value" />
+```
+
+Configure the applicable formatter/linter to preserve these layouts, verifying installed option support and final pipeline convergence. Existing inline-element exceptions must not reattach content to the delimiter line of a multiline opening tag.
+<!-- section:html:end -->
+
 <!-- section:vue:start -->
 ## Vue single-file components
 
