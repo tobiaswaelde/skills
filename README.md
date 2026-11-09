@@ -1,15 +1,19 @@
 # Personal Codex skills
 
-Private marketplace `tobiaswaelde`, plugin `personal-skills`.
+Personal marketplace `tobiaswaelde`, plugin `personal-skills`.
 
-## Install on another Mac
+## Set up a new computer
 
-GitHub SSH access to this private repository is required.
+Follow the complete [setup guide (German)](docs/setup.md) on a new Linux computer, Mac, or Windows computer using WSL2. It covers system prerequisites, Codex and GitHub authentication, [uv](https://docs.astral.sh/uv/), [Spec Kit](https://github.com/github/spec-kit), [RTK](https://github.com/rtk-ai/rtk), [Context7](https://context7.com/docs/clients/codex), all three skill marketplaces, global instructions, verification, and updates.
+
+If Codex and the other prerequisites are already configured, install the personal skills directly:
 
 ```sh
-codex plugin marketplace add git@github.com:tobiaswaelde/skills.git --ref main
+codex plugin marketplace add https://github.com/tobiaswaelde/skills.git --ref main
 codex plugin add personal-skills@tobiaswaelde
 ```
+
+The repository is public; installation over HTTPS does not require a GitHub SSH key. GitHub authentication is still needed to push changes and work with issues or pull requests.
 
 ## Use the coding workflow by default
 
