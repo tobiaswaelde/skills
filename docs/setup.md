@@ -209,7 +209,7 @@ $speckit-tasks Break the implementation into verifiable tasks.
 $speckit-implement
 ```
 
-Spec Kit is configured per project. Once the project has a usable setup, start coding tasks with `$coding-workflow`; it detects Spec Kit and uses its specification, plan, and task artifacts within the existing approval and delivery process. During Plan mode, drafts stay in chat. Files are saved after plan approval, issue creation, and implementation approval in the selected checkout. A suitable task worktree already created by Codex is reused without another location question. See the [integration policy](../skills/coding-workflow/references/spec-kit-integration.md) for task synchronization and partial-setup handling.
+Spec Kit is configured per project. Once the setup is usable, start coding tasks with `$coding-workflow`; it begins with `speckit-plan` in a writable mode, establishing a missing specification first if required. It asks before `speckit-tasks`, then asks to create the issue and commit planning files. After that separate planning commit, it asks to start implementation. Each implementation task gets its own validated commit and Changesets metadata when configured. The completed feature gets a PR and a separate merge decision conditional on green CI. Codex Plan mode is required only when Spec Kit is unavailable. A suitable task worktree already created by Codex is reused without another location question. See the [integration policy](../skills/coding-workflow/references/spec-kit-integration.md) for details.
 
 Source: [Spec Kit: Codex integration](https://github.github.io/spec-kit/integrations/codex.html).
 
