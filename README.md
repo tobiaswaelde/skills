@@ -30,6 +30,8 @@ Workflow and guideline decisions use the bundled [native interactive decision po
 
 The workflow recognizes a suitable active task worktree, including one already created by Codex, and reuses it without asking for the location again. Implementation approval remains separate. In projects already prepared for Spec Kit, it uses the [Spec Kit integration](skills/coding-workflow/references/spec-kit-integration.md): draft artifacts in chat during Plan mode, persist them after the required approvals, and keep task IDs and completion synchronized with the issue. Projects without a usable setup follow the ordinary workflow without automatic installation or migration.
 
+Starting with an existing or approved chat plan triggers the same Spec Kit detection. Before the first product-code change, the workflow must reconcile that plan into the matching feature's specification, plan, and tasks, report their paths, and continue from the next unfinished task. No separate Spec Kit invocation or repeated planning request is required.
+
 Larger features are planned as small, ordered implementation tasks with acceptance checks. Each completed task gets its own commit and recorded validation before the next dependent task starts; feature-wide checks run before the PR. This normally stays within one feature issue, branch, and PR, and retains the agreed approval gates and merge method.
 
 ## Create and publish skills

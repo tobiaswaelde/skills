@@ -1,6 +1,6 @@
 interface:
   display_name: "Coding Workflow"
   short_description: "Plan, implement, and deliver coding project changes"
-  default_prompt: "Use $coding-workflow to take this task from an approved plan through the project’s task tracking and review process to approved delivery."
+  default_prompt: "Use $coding-workflow to deliver this task or existing plan, automatically detecting prepared Spec Kit projects, reusing the selected worktree, and completing the approved artifact handoff before product implementation while preserving required approvals."
 policy:
   allow_implicit_invocation: true
