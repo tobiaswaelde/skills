@@ -4,7 +4,7 @@ Personal marketplace `tobiaswaelde`, plugin `personal-skills`.
 
 ## Set up a new computer
 
-Follow the complete [setup guide (German)](docs/setup.md) on a new Linux computer, Mac, or Windows computer using WSL2. It covers system prerequisites, Codex and GitHub authentication, [uv](https://docs.astral.sh/uv/), [Spec Kit](https://github.com/github/spec-kit), [RTK](https://github.com/rtk-ai/rtk), [Context7](https://context7.com/docs/clients/codex), all three skill marketplaces, global instructions, verification, and updates.
+Follow the complete [setup guide](docs/setup.md) on a new Linux computer, Mac, or Windows computer using WSL2. It covers system prerequisites, Codex and GitHub authentication, [uv](https://docs.astral.sh/uv/), [Spec Kit](https://github.com/github/spec-kit), [RTK](https://github.com/rtk-ai/rtk), [Context7](https://context7.com/docs/clients/codex), all three skill marketplaces, global instructions, verification, and updates.
 
 If Codex and the other prerequisites are already configured, install the personal skills directly:
 
