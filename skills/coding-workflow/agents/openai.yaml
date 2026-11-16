@@ -1,6 +1,6 @@
 interface:
   display_name: "Coding Workflow"
   short_description: "Plan, implement, and deliver coding project changes"
-  default_prompt: "Use $coding-workflow with Spec Kit planning when available and Codex Plan mode otherwise, reusing the task worktree and asking separately about task generation, issue creation with a planning commit, implementation, and merging the completed PR after green CI."
+  default_prompt: "Use $coding-workflow to plan, generate tasks, and deliver this change using the available Spec Kit or Codex Plan mode path."
 policy:
   allow_implicit_invocation: true
